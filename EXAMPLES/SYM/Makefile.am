@@ -1,7 +1,7 @@
 LDADD = $(top_builddir)/SRC/libarpack$(LIBSUFFIX)$(ITF64SUFFIX).la $(LAPACK_LIBS) $(BLAS_LIBS)
 
-SSDRV = ssdrv1 ssdrv2 ssdrv3 ssdrv4 ssdrv5 ssdrv6
-DSDRV = dsdrv1 dsdrv2 dsdrv3 dsdrv4 dsdrv5 dsdrv6
+SSDRV = ssdrv1 ssdrv2 ssdrv3 ssdrv4 ssdrv5 ssdrv6 ssdrv7
+DSDRV = dsdrv1 dsdrv2 dsdrv3 dsdrv4 dsdrv5 dsdrv6 dsdrv7
 SYM = $(SSDRV) $(DSDRV)
 
 check_PROGRAMS = $(SYM)
@@ -16,6 +16,7 @@ ssdrv3_SOURCES = ssdrv3.f
 ssdrv4_SOURCES = ssdrv4.f
 ssdrv5_SOURCES = ssdrv5.f
 ssdrv6_SOURCES = ssdrv6.f
+ssdrv7_SOURCES = ssdrv7.f
 
 # simple symmetric problem using double precision
 dsdrv1_SOURCES = dsdrv1.f
@@ -24,3 +25,4 @@ dsdrv3_SOURCES = dsdrv3.f
 dsdrv4_SOURCES = dsdrv4.f
 dsdrv5_SOURCES = dsdrv5.f
 dsdrv6_SOURCES = dsdrv6.f
+dsdrv7_SOURCES = dsdrv7.f
