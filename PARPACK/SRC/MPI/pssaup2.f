@@ -242,6 +242,8 @@ c
      &           np0, nptemp, nevd2, nevm2, kp(3)
       Real
      &           rnorm, temp, eps23, buf2(1)
+      logical    rthit
+      external   ssrthk
       save       cnorm, getv0, initv, update, ushift,
      &           iter, kplusp, msglvl, nconv, nev0, np0,
      &           rnorm, eps23
@@ -516,6 +518,14 @@ c
          call scopy (nev, bounds(np+1), 1, workl(np+1), 1)
          call ssconv (nev, ritz(np+1), workl(np+1), tol, nconv)
 c
+c        %------------------------------------------------------%
+c        | Optional Ritz value threshold (see ssetrt): stop    |
+c        | early once all eigenvalues up to it have converged.  |
+c        %------------------------------------------------------%
+c
+         call ssrthk (which, nev, ritz(np+1), workl(np+1), tol,
+     &                nconv, rthit)
+c
          if (msglvl .gt. 2) then
             kp(1) = nev
             kp(2) = np
@@ -546,7 +556,7 @@ c
             end if
  30      continue
 c
-         if ( (nconv .ge. nev0) .or.
+         if ( (nconv .ge. nev0) .or. rthit .or.
      &        (iter .gt. mxiter) .or.
      &        (np .eq. 0) ) then
 c

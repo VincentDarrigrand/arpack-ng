@@ -1,5 +1,8 @@
 arpack-ng - next
 
+[ Vincent Darrigrand ]
+ * Add optional Ritz value threshold for early termination of ?saupd/p?saupd (WHICH='LA' or 'SA'): ?setrt/?clrrt. Off by default, no change to existing interfaces. Examples dsdrv7, ssdrv7, pdsdrv7.
+
 [ Evan Biederstedt ]
 * Fix warnings for "Warning: Obsolescent feature: Old-style character length at (1)", compiled with `gfortran-16  -fpic  -g -O2 -Wall -pedantic -mtune=native`
 * Changed GitHub CI workflows for Mac OS to use 'brew install open-mpi', as `mpich` fails. 

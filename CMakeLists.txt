@@ -569,12 +569,14 @@ if (EXAMPLES)
         dsdrv4.f
         dsdrv5.f
         dsdrv6.f
+        dsdrv7.f
         ssdrv1.f
         ssdrv2.f
         ssdrv3.f
         ssdrv4.f
         ssdrv5.f
-        ssdrv6.f)
+        ssdrv6.f
+        ssdrv7.f)
 
     examples(examples_STAT_SRCS)
 
@@ -590,6 +592,7 @@ if (EXAMPLES)
             pdndrv1.f
             pdndrv3.f
             pdsdrv1.f
+            pdsdrv7.f
             psndrv1.f
             psndrv3.f
             pssdrv1.f

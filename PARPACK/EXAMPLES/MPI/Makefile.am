@@ -4,7 +4,7 @@ LDADD = $(top_builddir)/PARPACK/SRC/MPI/libparpack$(LIBSUFFIX)$(ITF64SUFFIX).la 
 SNDRV = psndrv1 psndrv3
 DNDRV = pdndrv1 pdndrv3
 SSDRV = pssdrv1
-DSDRV = pdsdrv1
+DSDRV = pdsdrv1 pdsdrv7
 CNDRV = pcndrv1
 ZNDRV = pzndrv1
 
@@ -31,6 +31,7 @@ pssdrv1_SOURCES = pssdrv1.f
 
 # Simple symmetric problem using double precision
 pdsdrv1_SOURCES = pdsdrv1.f
+pdsdrv7_SOURCES = pdsdrv7.f
 
 # Complex problem using single complex
 pcndrv1_SOURCES = pcndrv1.f
